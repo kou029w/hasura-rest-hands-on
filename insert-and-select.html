@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hasuraで作るREST API - Hasuraで作るREST API</title>
+        <title>GraphQLによるデータの挿入と取得 - Hasuraで作るREST API</title>
                 
 
         <!-- Custom HTML head -->
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Hasuraで作るREST API</a></li><li class="chapter-item expanded "><a href="preparation.html"><strong aria-hidden="true">2.</strong> 事前準備</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="signup-heroku.html"><strong aria-hidden="true">2.1.</strong> Herokuのアカウント登録</a></li><li class="chapter-item expanded "><a href="signup-hasura-cloud.html"><strong aria-hidden="true">2.2.</strong> Hasura Cloudのアカウント登録</a></li></ol></li><li class="chapter-item expanded "><a href="create-project.html"><strong aria-hidden="true">3.</strong> Hasura Cloudプロジェクトの作成</a></li><li class="chapter-item expanded "><a href="create-heroku-database.html"><strong aria-hidden="true">4.</strong> Heroku Databaseへの接続</a></li><li class="chapter-item expanded "><a href="create-table.html"><strong aria-hidden="true">5.</strong> テーブルの作成</a></li><li class="chapter-item expanded "><a href="insert-and-select.html"><strong aria-hidden="true">6.</strong> GraphQLによるデータの挿入と取得</a></li><li class="chapter-item expanded "><a href="create-rest-endpoint.html"><strong aria-hidden="true">7.</strong> REST APIエンドポイントの作成</a></li><li class="chapter-item expanded "><a href="permissions.html"><strong aria-hidden="true">8.</strong> アクセス権の設定</a></li><li class="chapter-item expanded "><a href="create-vue-app.html"><strong aria-hidden="true">9.</strong> Vueアプリケーションの作成</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Hasuraで作るREST API</a></li><li class="chapter-item expanded "><a href="preparation.html"><strong aria-hidden="true">2.</strong> 事前準備</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="signup-heroku.html"><strong aria-hidden="true">2.1.</strong> Herokuのアカウント登録</a></li><li class="chapter-item expanded "><a href="signup-hasura-cloud.html"><strong aria-hidden="true">2.2.</strong> Hasura Cloudのアカウント登録</a></li></ol></li><li class="chapter-item expanded "><a href="create-project.html"><strong aria-hidden="true">3.</strong> Hasura Cloudプロジェクトの作成</a></li><li class="chapter-item expanded "><a href="create-heroku-database.html"><strong aria-hidden="true">4.</strong> Heroku Databaseへの接続</a></li><li class="chapter-item expanded "><a href="create-table.html"><strong aria-hidden="true">5.</strong> テーブルの作成</a></li><li class="chapter-item expanded "><a href="insert-and-select.html" class="active"><strong aria-hidden="true">6.</strong> GraphQLによるデータの挿入と取得</a></li><li class="chapter-item expanded "><a href="create-rest-endpoint.html"><strong aria-hidden="true">7.</strong> REST APIエンドポイントの作成</a></li><li class="chapter-item expanded "><a href="permissions.html"><strong aria-hidden="true">8.</strong> アクセス権の設定</a></li><li class="chapter-item expanded "><a href="create-vue-app.html"><strong aria-hidden="true">9.</strong> Vueアプリケーションの作成</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -120,7 +120,7 @@
                                                                         <a href="https://github.com/kou029w/hasura-rest-hands-on/tree/main/docs" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://github.com/kou029w/hasura-rest-hands-on/edit/main/docs/docs/README.md" title="Suggest an edit" aria-label="Suggest an edit">
+                                                                        <a href="https://github.com/kou029w/hasura-rest-hands-on/edit/main/docs/docs/insert-and-select.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         
@@ -149,19 +149,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hasuraで作るrest-api"><a class="header" href="#hasuraで作るrest-api">Hasuraで作るREST API</a></h1>
-<p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築します。</p>
-<!-- TODO:
-これから作成する構成 - Heroku Database/Hasura Cloud/CodeSandbox/Vue 3/Quill)
-https://qfmmc.csb.app/
+                        <h1 id="graphqlによるデータの挿入と取得"><a class="header" href="#graphqlによるデータの挿入と取得">GraphQLによるデータの挿入と取得</a></h1>
+<!--
+TODO:
+(GraphQLの基本)
 -->
+<!-- prettier-ignore-start -->
+<pre><code class="language-graphql">mutation MyMutation {
+  insert_pages_one(object: {content: {}}) {
+    id
+    content
+  }
+}
+</code></pre>
+<!-- prettier-ignore-end -->
+<p><img src="https://lh3.googleusercontent.com/ygTdByArh1HC1hmh_Eq76ExXmcy0bq2k2y4uBgS3Gdqs7VPb9SjsjuPa_vB5o55Wt69yswx-UHHbjhLdQLH0Cnd2zLMKIWU8wKpQ_zPXmpKki6H5ugVg8B7qDwfY2qnZthheXM-h9w=w1280" alt="" /></p>
+<!-- prettier-ignore-start -->
+<pre><code class="language-graphql">mutation MyMutation {
+  insert_pages_one(object: {content: {hey: &quot;hello!&quot;}}) {
+    id
+    content
+  }
+}
+</code></pre>
+<!-- prettier-ignore-end -->
+<p><img src="https://lh3.googleusercontent.com/jJ11PeUPl-HOu38_Om5KSwm0WguYTopL9Gw1SXX7x9RxRfiBfNNp9Su6FtzzEwsQGZNm8HUX76McMs1YfuhnU9tJWgZoJfpma7_Zk8U2SaOgizNV-G4TA4eKIE5yR5cglZai43It2g=w1280" alt="" /></p>
+<p><img src="https://lh3.googleusercontent.com/2ExXahoxvOy25dwNkM8YhlVdlo_3T5kjqGDSRzDfV2O3TV3gjK2F03zp_ewSuafsH_nyS0voOsX5G6uahxSgNRp-BpYpQSCFE36v85D_sEaSnfMcGwPnQMI7kWqsV0X1aUAQhnUgqg=w1280" alt="" /></p>
+<!-- prettier-ignore-start -->
+<pre><code class="language-graphql">query MyQuery {
+  pages_by_pk(id: 2) {
+    id
+    content
+  }
+}
+</code></pre>
+<!-- prettier-ignore-end -->
+<p><img src="https://lh3.googleusercontent.com/WE8Pqbr0M-RwfGTxoq8uPyZcLkjppcP_g5HVGastYV_pr7Q_mYB9svilyeTRF7G0WK7g4Xgi19AgamY-8h9xuo_05AKb5r96dtiJJpWe7IX7aJjCs9fBssMxhAZUfDA1OsJ1NZ_Yvw=w1280" alt="" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="create-table.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
-                                                    <a rel="next" href="preparation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                                    <a rel="next" href="create-rest-endpoint.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -171,8 +204,11 @@ https://qfmmc.csb.app/
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="create-table.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
-                                    <a rel="next" href="preparation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                    <a rel="next" href="create-rest-endpoint.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                             </nav>
