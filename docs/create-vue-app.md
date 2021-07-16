@@ -1,0 +1,47 @@
+# Vueアプリケーションの作成
+
+https://qfmmc.csb.app/
+
+```vue
+<template>
+  <QuillEditor
+    ref="editor"
+    :content="{ ops: [{ insert: '読み込み中…' }] }"
+    @update:content="update"
+    toolbar="full"
+  />
+</template>
+
+<script>
+import { QuillEditor } from "@vueup/vue-quill";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
+import axios from "axios";
+import _ from "lodash";
+
+/** ここに先ほど作成したREST APIエンドポイントを指定します */
+const endpoint = "https://memo-demo.hasura.app/api/rest/page/1";
+
+export default {
+  name: "App",
+  components: { QuillEditor },
+  beforeMount() {
+    this.update = _.debounce(async (content) => {
+      await axios.put(endpoint, { content });
+      console.debug("updated", content);
+    }, 1000);
+  },
+  async mounted() {
+    const res = await axios.get(endpoint);
+    const content = res.data.page?.content;
+    this.$refs.editor.setContents(content);
+    console.debug("content", content);
+  },
+};
+</script>
+```
+
+![](https://lh3.googleusercontent.com/Z6UJraog11NnBg8lhyrAcdWRhfTEjTbOMv2kRLGTDzJF-d28Bn4MN7W-kymVztsbMa5SGXx8qS-NQoKF9o_pu2UlI9FJyS4AljIEOcJMULEsic-jk5TbOHtBF0eCerbGaQAcxb45qw=w1280)
+
+![](https://lh3.googleusercontent.com/WYpxLUGM52BZ0m5cQ_ZsEjfljdwLbaFkN47XTKp0Z9BPsDPhVImcR3rt9oWop-59ABCF2ubfsQOw2yyZAoT1GIkcjnZ4DCReg5Qn22pyOVT6DblipYIg3S0OZekcCziKxX9Fc6x_BA=w1280)
+
+![](https://lh3.googleusercontent.com/twteosRUkmMlBoa8PXU3UXC9umek-TzQ1kwOWZIShW7fKvW_4tVtG7B3Ue-olldhxh05x1JTFtt_Oxn2nLxcDPEGBv32bkE2zjpqL7heEjV54jkDgYqOm1tEq02qvnKoqu5yaSKRZA=w800)

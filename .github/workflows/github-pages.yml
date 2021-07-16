@@ -1,0 +1,25 @@
+name: github-pages
+on:
+  push:
+    branches: [main]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with: { node-version: lts/*, cache: yarn }
+      - name: Git config
+        run: |
+          git config user.name bot
+          git config user.email bot@example
+      - run: git subtree add --prefix book origin gh-pages
+      - run: brew bundle
+      - run: yarn
+      - run: yarn build
+      - name: Publish
+        run: |
+          git add -f book
+          if git commit -m update; then
+            git subtree push --prefix book origin gh-pages
+          fi

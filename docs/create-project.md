@@ -1,0 +1,12 @@
+# Hasura Cloudプロジェクトの作成
+
+もし、プロジェクトが存在しない場合、まずプロジェクトの作成を行います。
+すでに存在するプロジェクトを利用する場合は不要です。
+
+![](https://lh3.googleusercontent.com/S5JmjK-PKTK1BW7Q0CXxQWfLpy4T8j96n3QqKy9p88fsLXPDX056uR3bC4MlhBJcSUjcSWNoJrc9mkXq3PG4S-Aax55awJrP65MSx6_dpavy0tNEsAE4YGu3X0IImUjYdE_7QesTHA=w1280)
+
+![](https://lh3.googleusercontent.com/OHk3SnMo5zFoulppRwCkAahq6wr4JImN88XgSlkHYeZFhPTd1pHQp4CUXmDDRTAdmsk9kNCJLLzZ0x_yCH1kcnLQ9Zbkq2lm5KIJblFDBU56nJ3sSdposGBFVyUwrEMBXgNmox297A=w1280)
+
+![](https://lh3.googleusercontent.com/LL6dz4np-O19_runPMbCD5-d3kYc1_QUcc1bJif4Yx7dNr16SY4k6037kV82aqg1FrcYff3QGOFTqzyh9ReYyp-j43EtGJercr7dKxdBxcd1nDzPm9bbWFgJOYjhwNDUsGRWNV2d2g=w1280)
+
+画面上にプロジェクトが表示されれば完了です。

@@ -1,0 +1,10 @@
+[book]
+language = "ja"
+title = "Hasuraで作るREST API"
+authors = ["Kohei Watanabe"]
+src = "docs"
+
+[output.html]
+site-url = "/hasura-rest-hands-on/"
+git-repository-url = "https://github.com/kou029w/hasura-rest-hands-on"
+edit-url-template = "https://github.com/kou029w/hasura-rest-hands-on/edit/main/{path}"
