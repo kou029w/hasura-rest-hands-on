@@ -1,6 +1,17 @@
 # Vueアプリケーションの作成
 
-https://qfmmc.csb.app/
+[![Edit in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue3-hasura-rest-qfmmc?file=/src/App.vue)
+
+このリンクからCodeSandboxにアクセスし、Vueアプリケーションを作成します。
+
+<!-- TODO:
+編集用に配置して
+[![Edit in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/master/frontend)
+-->
+
+<!-- TODO: /frontend にあるコードを埋め込んで -->
+
+なお、URLに含まれる `memo-demo` は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。
 
 ```vue
 <template>
@@ -44,4 +55,10 @@ export default {
 
 ![](https://lh3.googleusercontent.com/WYpxLUGM52BZ0m5cQ_ZsEjfljdwLbaFkN47XTKp0Z9BPsDPhVImcR3rt9oWop-59ABCF2ubfsQOw2yyZAoT1GIkcjnZ4DCReg5Qn22pyOVT6DblipYIg3S0OZekcCziKxX9Fc6x_BA=w1280)
 
+Hasuraのコンソールにアクセスすると、実際にデータが更新されていることを確認することが可能です。
+
 ![](https://lh3.googleusercontent.com/twteosRUkmMlBoa8PXU3UXC9umek-TzQ1kwOWZIShW7fKvW_4tVtG7B3Ue-olldhxh05x1JTFtt_Oxn2nLxcDPEGBv32bkE2zjpqL7heEjV54jkDgYqOm1tEq02qvnKoqu5yaSKRZA=w800)
+
+Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成しました。いかがでしたか。
+
+このハンズオンは以上です。もし質問や提案、問題などあれば[GitHub Issues](https://github.com/kou029w/hasura-rest-hands-on/issues/new)にてお気軽にご報告ください。
