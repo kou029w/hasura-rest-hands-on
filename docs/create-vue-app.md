@@ -1,15 +1,8 @@
 # Vueアプリケーションの作成
 
-[![Edit in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue3-hasura-rest-qfmmc?file=/src/App.vue)
+[![Edit in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue)
 
 このリンクからCodeSandboxにアクセスし、Vueアプリケーションを作成します。
-
-<!-- TODO:
-編集用に配置して
-[![Edit in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/master/frontend)
--->
-
-<!-- TODO: /frontend にあるコードを埋め込んで -->
 
 なお、URLに含まれる `memo-demo` は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。
 

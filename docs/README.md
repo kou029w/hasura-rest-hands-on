@@ -4,9 +4,8 @@ Hasuraを使用してPostgresデータベースに接続したREST APIを構築�
 
 これからこのハンズオンで作成するのは次のようなWebアプリです。
 
-<!-- TODO: 自由に編集できてしまうので削除するか修正して -->
 <iframe
-  src="https://codesandbox.io/embed/vue3-hasura-rest-qfmmc?fontsize=14&hidenavigation=1&view=preview"
+  src="https://codesandbox.io/embed/github/kou029w/hasura-rest-hands-on/tree/main/frontend?codemirror=1&hidenavigation=1&view=preview"
   style="
     width: 100%;
     height: 500px;
