@@ -6,43 +6,7 @@
 
 なお、URLに含まれる `memo-demo` は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。
 
-```vue
-<template>
-  <QuillEditor
-    ref="editor"
-    :content="{ ops: [{ insert: '読み込み中…' }] }"
-    @update:content="update"
-    toolbar="full"
-  />
-</template>
-
-<script>
-import { QuillEditor } from "@vueup/vue-quill";
-import "@vueup/vue-quill/dist/vue-quill.snow.css";
-import axios from "axios";
-import _ from "lodash";
-
-/** ここに先ほど作成したREST APIエンドポイントを指定します */
-const endpoint = "https://memo-demo.hasura.app/api/rest/page/1";
-
-export default {
-  name: "App",
-  components: { QuillEditor },
-  beforeMount() {
-    this.update = _.debounce(async (content) => {
-      await axios.put(endpoint, { content });
-      console.debug("updated", content);
-    }, 1000);
-  },
-  async mounted() {
-    const res = await axios.get(endpoint);
-    const content = res.data.page?.content;
-    this.$refs.editor.setContents(content);
-    console.debug("content", content);
-  },
-};
-</script>
-```
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fkou029w%2Fhasura-rest-hands-on%2Fblob%2Fmain%2Ffrontend%2Fsrc%2FApp.vue&style=atom-one-dark&showLineNumbers=on&showCopy=on"></script>
 
 ![](https://lh3.googleusercontent.com/Z6UJraog11NnBg8lhyrAcdWRhfTEjTbOMv2kRLGTDzJF-d28Bn4MN7W-kymVztsbMa5SGXx8qS-NQoKF9o_pu2UlI9FJyS4AljIEOcJMULEsic-jk5TbOHtBF0eCerbGaQAcxb45qw=w1280)
 
