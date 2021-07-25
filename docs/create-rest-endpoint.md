@@ -70,4 +70,4 @@ mutation putPage($id: Int!, $content: jsonb!) {
 
 ![](https://lh3.googleusercontent.com/NUKkifFtbdjjti9tga3fHp0-iIc4e48Cz2HrBOUngbaDad5an29hJ9ucn7kG3MXLIyZw80wpfG3aZZrS9kDEYUnl9cV3VB0oZ6LqIRKbHlgUGBF2PJJC9ifLCABZhmn1Rv8u9mZ8qw=w1280)
 
-作成すると作成したREST APIエンドポイントが表示されます。
+作成が完了すると作成したREST APIエンドポイントの一覧が表示されます。
