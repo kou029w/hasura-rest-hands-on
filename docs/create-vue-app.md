@@ -6,7 +6,9 @@
 
 なお、URLに含まれる `memo-demo` は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fkou029w%2Fhasura-rest-hands-on%2Fblob%2Fmain%2Ffrontend%2Fsrc%2FApp.vue&style=atom-one-dark&showLineNumbers=on&showCopy=on"></script>
+```vue
+{{#include ../frontend/src/App.vue}}
+```
 
 ![](https://lh3.googleusercontent.com/Z6UJraog11NnBg8lhyrAcdWRhfTEjTbOMv2kRLGTDzJF-d28Bn4MN7W-kymVztsbMa5SGXx8qS-NQoKF9o_pu2UlI9FJyS4AljIEOcJMULEsic-jk5TbOHtBF0eCerbGaQAcxb45qw=w1280)
 
