@@ -410,7 +410,42 @@
 <p><a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit in CodeSandbox" /></a></p>
 <p>このリンクからCodeSandboxにアクセスし、Vueアプリケーションを作成します。</p>
 <p>なお、URLに含まれる <code>memo-demo</code> は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。</p>
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fkou029w%2Fhasura-rest-hands-on%2Fblob%2Fmain%2Ffrontend%2Fsrc%2FApp.vue&style=atom-one-dark&showLineNumbers=on&showCopy=on"></script>
+<pre><code class="language-vue">&lt;template&gt;
+  &lt;QuillEditor
+    ref=&quot;editor&quot;
+    :content=&quot;{ ops: [{ insert: '読み込み中…' }] }&quot;
+    @update:content=&quot;update&quot;
+    toolbar=&quot;full&quot;
+  /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { QuillEditor } from &quot;@vueup/vue-quill&quot;;
+import &quot;@vueup/vue-quill/dist/vue-quill.snow.css&quot;;
+import axios from &quot;axios&quot;;
+import debounce from &quot;lodash.debounce&quot;;
+
+/* ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です。 */
+const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
+
+export default {
+  name: &quot;App&quot;,
+  components: { QuillEditor },
+  beforeMount() {
+    this.update = debounce(async (content) =&gt; {
+      await axios.put(endpoint, { content });
+      console.log(&quot;updated&quot;, content);
+    }, 1000);
+  },
+  async mounted() {
+    const res = await axios.get(endpoint);
+    const content = res.data.page?.content;
+    this.$refs.editor.setContents(content);
+    console.log(&quot;content&quot;, content);
+  },
+};
+&lt;/script&gt;
+</code></pre>
 <p><img src="https://lh3.googleusercontent.com/Z6UJraog11NnBg8lhyrAcdWRhfTEjTbOMv2kRLGTDzJF-d28Bn4MN7W-kymVztsbMa5SGXx8qS-NQoKF9o_pu2UlI9FJyS4AljIEOcJMULEsic-jk5TbOHtBF0eCerbGaQAcxb45qw=w1280" alt="" /></p>
 <p><img src="https://lh3.googleusercontent.com/WYpxLUGM52BZ0m5cQ_ZsEjfljdwLbaFkN47XTKp0Z9BPsDPhVImcR3rt9oWop-59ABCF2ubfsQOw2yyZAoT1GIkcjnZ4DCReg5Qn22pyOVT6DblipYIg3S0OZekcCziKxX9Fc6x_BA=w1280" alt="" /></p>
 <p>Hasuraのコンソールにアクセスすると、実際にデータが更新されていることを確認することが可能です。</p>
