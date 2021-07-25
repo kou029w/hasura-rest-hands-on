@@ -1,6 +1,6 @@
 # Hasuraで作るREST API
 
-Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成します。
+[Hasura](https://hasura.io/)を使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成します。
 
 これからこのハンズオンで作成するのは次のようなWebアプリです。
 
