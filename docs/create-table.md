@@ -1,6 +1,6 @@
 # テーブルの作成
 
-[Data Manager] > [View Database] > [Add a new table]を選択し、新しいテーブルを作成します。
+[Data Manager] > [View Database] > [Create Table]を選択し、新しいテーブルを作成します。
 
 このハンズオンでは、次のデータモデルを作成します。
 
