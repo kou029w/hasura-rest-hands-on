@@ -18,6 +18,4 @@ Hasuraのコンソールにアクセスすると、実際にデータが更新�
 
 ![](https://lh3.googleusercontent.com/twteosRUkmMlBoa8PXU3UXC9umek-TzQ1kwOWZIShW7fKvW_4tVtG7B3Ue-olldhxh05x1JTFtt_Oxn2nLxcDPEGBv32bkE2zjpqL7heEjV54jkDgYqOm1tEq02qvnKoqu5yaSKRZA=w800)
 
-Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成しました。いかがでしたか。
-
-このハンズオンは以上です。もし質問や提案、問題などあれば[GitHub Issues](https://github.com/kou029w/hasura-rest-hands-on/issues/new)にてお気軽にご報告ください。
+Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成しました。
