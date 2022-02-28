@@ -5,7 +5,7 @@
 これからこのハンズオンで作成するのは次のようなWebアプリです。
 
 <iframe
-  src="https://codesandbox.io/embed/github/kou029w/hasura-rest-hands-on/tree/main/frontend?codemirror=1&hidenavigation=1&view=preview"
+  src="https://codesandbox.io/embed/github/kou029w/hasura-rest-hands-on/tree/main/frontend?codemirror=1&hidenavigation=1&view=preview&module=/src/App.vue"
   style="
     width: 100%;
     height: 500px;
@@ -22,7 +22,7 @@
 - [Hasura Cloud](https://cloud.hasura.io/) - すぐに利用可能なHasuraの環境
 - [Heroku Postgres](https://jp.heroku.com/postgres) - すぐに利用可能なデータベース
 - [CodeSandbox](https://codesandbox.io/) - フロントエンドのオンライン開発環境
-- [Vue 3](https://v3.vuejs.org/) - プログレッシブWebフレームワーク
+- [Vue 3](https://vuejs.org/) - プログレッシブWebフレームワーク
 - [Quill](https://quilljs.com/) - リッチテキストエディター
 
 それではさっそく作っていきましょう!

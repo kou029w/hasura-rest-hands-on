@@ -4,7 +4,10 @@
 
 認証には、Webhookを介する方法とJWTを介する方法があります。
 
-より詳しい情報は、[公式ドキュメント](https://hasura.io/docs/latest/graphql/core/auth/index.html) を参照してください。
+より詳しい情報は、[公式ドキュメント](https://hasura.io/docs/latest/graphql/core/auth/index.html) や、公式チュートリアルを参照してください。
+
+- [Hasura GraphQL チュートリアル](https://hasura.io/learn/graphql/hasura/introduction/)
+- [Hasura GraphQL チュートリアル (日本語版)](https://hasura.io/learn/ja/graphql/hasura/introduction/)
 
 ## CORSの設定
 
