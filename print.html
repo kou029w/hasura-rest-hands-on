@@ -142,7 +142,7 @@
 <p><a href="https://hasura.io/">Hasura</a>を使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成します。</p>
 <p>これからこのハンズオンで作成するのは次のようなWebアプリです。</p>
 <iframe
-  src="https://codesandbox.io/embed/github/kou029w/hasura-rest-hands-on/tree/main/frontend?codemirror=1&hidenavigation=1&view=preview"
+  src="https://codesandbox.io/embed/github/kou029w/hasura-rest-hands-on/tree/main/frontend?codemirror=1&hidenavigation=1&view=preview&module=/src/App.vue"
   style="
     width: 100%;
     height: 500px;
@@ -158,7 +158,7 @@
 <li><a href="https://cloud.hasura.io/">Hasura Cloud</a> - すぐに利用可能なHasuraの環境</li>
 <li><a href="https://jp.heroku.com/postgres">Heroku Postgres</a> - すぐに利用可能なデータベース</li>
 <li><a href="https://codesandbox.io/">CodeSandbox</a> - フロントエンドのオンライン開発環境</li>
-<li><a href="https://v3.vuejs.org/">Vue 3</a> - プログレッシブWebフレームワーク</li>
+<li><a href="https://vuejs.org/">Vue 3</a> - プログレッシブWebフレームワーク</li>
 <li><a href="https://quilljs.com/">Quill</a> - リッチテキストエディター</li>
 </ul>
 <p>それではさっそく作っていきましょう!</p>
@@ -398,8 +398,9 @@
 <p><img src="https://lh3.googleusercontent.com/C1hwqyYYH8jtAZfkJG5y6DlOn7mYn9cXI1Er5xnGKZcddVw7dP_yj8_-j7v9D-SOjOi0Pu1qM74fLRu9XjSjFkU6LWbNysgS7QVU1ROqVJf0Ic0Hwud4rZyoxhopks2G8veA9SIMWg=w1280" alt="" /></p>
 <p>REST APIエンドポイントをWebアプリから利用する準備が整いました 🎉</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vueアプリケーションの作成"><a class="header" href="#vueアプリケーションの作成">Vueアプリケーションの作成</a></h1>
-<p><a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a></p>
-<p>このリンクからCodeSandboxにアクセスし、Vueアプリケーションを作成します。</p>
+<p><a href="https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&amp;file=src/App.vue"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Edit on StackBlitz" /></a>
+<a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a></p>
+<p>いずれかのリンクにアクセスし、Vueアプリケーションを作成します。</p>
 <p>なお、URLに含まれる <code>memo-demo</code> は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。</p>
 <pre><code class="language-vue">&lt;script&gt;
 import { ref, onMounted } from &quot;vue&quot;;
@@ -441,22 +442,21 @@ export default {
 </code></pre>
 <p>Hasuraのコンソールにアクセスすると、実際にデータが更新されていることを確認できます。</p>
 <p><img src="https://lh3.googleusercontent.com/twteosRUkmMlBoa8PXU3UXC9umek-TzQ1kwOWZIShW7fKvW_4tVtG7B3Ue-olldhxh05x1JTFtt_Oxn2nLxcDPEGBv32bkE2zjpqL7heEjV54jkDgYqOm1tEq02qvnKoqu5yaSKRZA=w800" alt="" /></p>
-<p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成しました。</p>
+<p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成できました🎉</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="実践的な機能"><a class="header" href="#実践的な機能">実践的な機能</a></h1>
 <h2 id="認証"><a class="header" href="#認証">認証</a></h2>
 <p>認証には、Webhookを介する方法とJWTを介する方法があります。</p>
-<p>より詳しい情報は、<a href="https://hasura.io/docs/latest/graphql/core/auth/index.html">公式ドキュメント</a> を参照してください。</p>
+<p>より詳しい情報は、<a href="https://hasura.io/docs/latest/graphql/core/auth/index.html">公式ドキュメント</a> や、公式チュートリアルを参照してください。</p>
+<ul>
+<li><a href="https://hasura.io/learn/graphql/hasura/introduction/">Hasura GraphQL チュートリアル</a></li>
+<li><a href="https://hasura.io/learn/ja/graphql/hasura/introduction/">Hasura GraphQL チュートリアル (日本語版)</a></li>
+</ul>
 <h2 id="corsの設定"><a class="header" href="#corsの設定">CORSの設定</a></h2>
 <p>応答ヘッダーには、デフォルトで <code>Access-Control-Allow-Origin: *</code> ヘッダーが含まれており、外部からのアクセスをすべて許可しています。
 適宜セキュリティ要件に合わせて設定することを推奨します。</p>
 <p>より詳しい情報は、<a href="https://hasura.io/docs/latest/graphql/core/deployment/graphql-engine-flags/config-examples.html#id1">公式ドキュメント</a> を参照してください。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="参考文献"><a class="header" href="#参考文献">参考文献</a></h1>
-<ul>
-<li><a href="https://hasura.io/docs/latest/graphql/core/index.html">Hasura GraphQL Docs</a></li>
-<li><a href="https://hasura.io/learn/graphql/hasura/introduction/">Hasura GraphQL チュートリアル</a></li>
-<li><a href="https://hasura.io/learn/ja/graphql/hasura/introduction/">Hasura GraphQL チュートリアル (日本語版)</a></li>
-<li><a href="https://www.youtube.com/watch?v=nxnn_VhfoQM">Hasura GraphQL API サーバーを Heroku に構築後、Auth0 で権限認証 - YouTube</a></li>
-</ul>
+<p><a href="https://hasura.io/docs/latest/graphql/core/index.html">Hasura GraphQL Docs</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="質問提案問題の報告"><a class="header" href="#質問提案問題の報告">質問・提案・問題の報告</a></h1>
 <p>もし何か気になることがあれば、<a href="https://github.com/kou029w/hasura-rest-hands-on/issues/new">GitHub Issues</a> からお気軽にお寄せください。</p>
 
