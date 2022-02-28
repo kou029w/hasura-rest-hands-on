@@ -1,8 +1,9 @@
 # Vueアプリケーションの作成
 
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&file=src/App.vue)
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue)
 
-このリンクからCodeSandboxにアクセスし、Vueアプリケーションを作成します。
+いずれかのリンクにアクセスし、Vueアプリケーションを作成します。
 
 なお、URLに含まれる `memo-demo` は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。
 
