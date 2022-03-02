@@ -13,5 +13,8 @@
 下記のコマンドを実行すると `book` ディレクトリ以下にファイルが生成されます。
 
 ```sh
-brew bundle && yarn && yarn build
+yarn
+yarn build
+brew bundle
+mdbook build
 ```
