@@ -21,4 +21,4 @@
 
 ![](https://lh3.googleusercontent.com/L8V_vs7cCKWrzUlnh9H78aDCgPYjFaLxiZNN76lte8zU3NR9x1-jEy91Hx5hpulA4EfCcdPww7dbBqhzBXUBku6HdGKUvPm_4JZFmZSlX9Xy2mmjCRsyktfZuivCr98CdP-pfJX2uQ=w1280)
 
-これでHasuraからGraphQLによるデータへの操作が可能になります。
+これでHasuraによるデータの操作が可能になります。

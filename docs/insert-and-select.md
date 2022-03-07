@@ -1,6 +1,6 @@
 # GraphQLによるデータの挿入と取得
 
-HasuraからGraphQLによるデータへの操作を行ってみましょう。
+GraphQLによるデータの操作を行ってみましょう。
 
 コンソールのトップ画面に戻ると、GraphiQL (GraphQLのプレイグラウンド、開発環境) を使ってGraphQL APIを実際に試すことが可能です。
 
