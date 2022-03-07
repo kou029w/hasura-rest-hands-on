@@ -145,7 +145,7 @@
 <p>コンソールのトップ画面に戻ると、GraphiQL (GraphQLのプレイグラウンド、開発環境) を使ってGraphQL APIを実際に試すことが可能です。</p>
 <p><img src="https://lh3.googleusercontent.com/ygTdByArh1HC1hmh_Eq76ExXmcy0bq2k2y4uBgS3Gdqs7VPb9SjsjuPa_vB5o55Wt69yswx-UHHbjhLdQLH0Cnd2zLMKIWU8wKpQ_zPXmpKki6H5ugVg8B7qDwfY2qnZthheXM-h9w=w1280" alt="" /></p>
 <h2 id="データの挿入"><a class="header" href="#データの挿入">データの挿入</a></h2>
-<p>まずGraphQLでデータの挿入を試します。ここでは例として <code>pages</code> テーブルに次のデータを書き込みます。</p>
+<p>まずGraphQLでデータを挿入してみます。ここでは例として <code>pages</code> テーブルに次のデータを書き込みます。</p>
 <table><thead><tr><th>項目</th><th>説明</th><th>値</th></tr></thead><tbody>
 <tr><td><code>content</code></td><td>ページの本文</td><td><code>{}</code> - 空のオブジェクト</td></tr>
 </tbody></table>
@@ -159,8 +159,9 @@
 }
 </code></pre>
 <!-- prettier-ignore-end -->
-<p>サーバーにリクエストを発行しレスポンスボディとして得られたデータは、右側のパネルに表示されます。
-問題無くJSONのデータが得られたら、別のデータの書き込みを試してみます。</p>
+<p>サーバーにリクエストを発行しレスポンスボディとして得られたデータは、右側のパネルに表示されます。</p>
+<p>問題なくデータが得られたでしょうか。
+別のデータも試してみましょう。</p>
 <p>例として <code>pages</code> テーブルに次のデータを書き込みます。</p>
 <table><thead><tr><th>項目</th><th>説明</th><th>値</th></tr></thead><tbody>
 <tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello&quot;}</code></td></tr>
@@ -174,14 +175,16 @@
 }
 </code></pre>
 <!-- prettier-ignore-end -->
-<p>レスポンスを見ると問題なく <code>id</code> (ページの識別子) が得られており、正しく割り当てられ、テーブル内に書き込まれているようですね。</p>
 <p><img src="https://lh3.googleusercontent.com/jJ11PeUPl-HOu38_Om5KSwm0WguYTopL9Gw1SXX7x9RxRfiBfNNp9Su6FtzzEwsQGZNm8HUX76McMs1YfuhnU9tJWgZoJfpma7_Zk8U2SaOgizNV-G4TA4eKIE5yR5cglZai43It2g=w1280" alt="" /></p>
+<p>レスポンスを見ると問題なく <code>id</code> (ページの識別子) が得られており、正しく割り当てられているようですね。
+問題なくテーブル内に書き込まれているようです。</p>
 <p>実際にデータベースのテーブルに書き込まれていることを確認してみます。[Data Manager] &gt; [View Database] &gt; <code>pages</code> テーブルを選択すると[Browse Rows]パネルでテーブル内のデータを確認することが可能です。</p>
-<p>先ほどのGraphQL Queryリクエストが問題なく発行され、正しくデータが書き込まれていますね。</p>
 <p><img src="https://lh3.googleusercontent.com/2ExXahoxvOy25dwNkM8YhlVdlo_3T5kjqGDSRzDfV2O3TV3gjK2F03zp_ewSuafsH_nyS0voOsX5G6uahxSgNRp-BpYpQSCFE36v85D_sEaSnfMcGwPnQMI7kWqsV0X1aUAQhnUgqg=w1280" alt="" /></p>
+<p>先ほどのGraphQL Queryリクエストが問題なく発行され、正しくデータが書き込まれていますね。</p>
 <h2 id="データの取得"><a class="header" href="#データの取得">データの取得</a></h2>
-<p>上述の <code>pages</code> テーブル内からGraphQLでデータの取得を試します。取得するために、データに割り当てられた <code>id</code> を使います。</p>
-<p>GraphQL Queryとしては次のコードを書いて、▶ ボタンからリクエストを行います。</p>
+<p>続いて、<code>pages</code> テーブルのデータを取得してみます。</p>
+<p><img src="https://lh3.googleusercontent.com/WE8Pqbr0M-RwfGTxoq8uPyZcLkjppcP_g5HVGastYV_pr7Q_mYB9svilyeTRF7G0WK7g4Xgi19AgamY-8h9xuo_05AKb5r96dtiJJpWe7IX7aJjCs9fBssMxhAZUfDA1OsJ1NZ_Yvw=w1280" alt="" /></p>
+<p>次のGraphQL Queryを書き、リクエストを行います。</p>
 <!-- prettier-ignore-start -->
 <pre><code class="language-graphql">query MyQuery {
   pages_by_pk(id: 2) {
@@ -191,14 +194,15 @@
 }
 </code></pre>
 <!-- prettier-ignore-end -->
-<p>レスポンスを見ると、問題なく先ほど書き込まれたのテーブル内データが得られていますね。</p>
+<p>このとき、引数の <code>id</code> として、データに割り当てられた <code>id</code> を使います。</p>
 <table><thead><tr><th>項目</th><th>説明</th><th>例</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>ページの識別子</td><td><code>2</code></td></tr>
 <tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello&quot;}</code></td></tr>
 </tbody></table>
-<p><img src="https://lh3.googleusercontent.com/WE8Pqbr0M-RwfGTxoq8uPyZcLkjppcP_g5HVGastYV_pr7Q_mYB9svilyeTRF7G0WK7g4Xgi19AgamY-8h9xuo_05AKb5r96dtiJJpWe7IX7aJjCs9fBssMxhAZUfDA1OsJ1NZ_Yvw=w1280" alt="" /></p>
-<p>GraphQLでデータの挿入と取得を実際に試してみて、いかがでしたか。</p>
-<p>このハンズオンではGraphQLの具体的なオペレーション <code>mutation</code> や <code>query</code>、Hasuraの提供しているデータのCRUDのためのフィールド <code>insert_*</code> や <code>*_by_pk</code> について詳しくは説明しません。しかし実際にはここで紹介した以外にもさまざまな操作を行うことが可能です。[Explorer]のパネルから実行可能な操作や型、あるいは右側の[&lt; Docs]等からGraphQLの型の詳細を参照してみると、実際の操作の参考になるかと思います。</p>
+<p>レスポンスを見ると、問題なく先ほど書き込まれたのテーブル内データが得られていますね。</p>
+<p>このようにして、HasuraではGraphQLを使って簡単にデータベースのデータを操作できます。</p>
+<p>実際にはここで紹介した以外にもさまざまな操作を行うことが可能です。GraphiQLの[Explorer]パネルから実行可能な操作や型を参照してみると、実際の操作の参考になるかと思います。
+あるいは、右側の[Docs]パネルからGraphQLの型の詳細を参照してみてください。</p>
 
                     </main>
 
