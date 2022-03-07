@@ -141,10 +141,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="rest-apiエンドポイントの作成"><a class="header" href="#rest-apiエンドポイントの作成">REST APIエンドポイントの作成</a></h1>
-<p>ここまでは、GraphQLを使った操作を試しました。この時点でリクエストヘッダーに秘密鍵を与えれば、実際にGraphQL APIエンドポイントを利用することが可能です。</p>
-<p>このハンズオンでは最後にREST APIエンドポイントを作成し、WebアプリケーションからGraphQL APIではなくREST APIを利用します。ここからはそのための手順を説明します。</p>
+<p>ここからは、Hasuraを使ってREST APIエンドポイントを作成し、実際にWebアプリケーションから利用する方法を説明します。</p>
 <h2 id="設計"><a class="header" href="#設計">設計</a></h2>
-<p>Hasuraは、GraphQL QueryをREST化することが可能です。このハンズオンでは、次の仕様のREST APIエンドポイントを作成します。</p>
+<p>HasuraはGraphQL QueryをREST化することが可能です。このハンズオンでは、次の仕様のREST APIエンドポイントを作成します。</p>
 <table><thead><tr><th>名称</th><th>HTTPメソッドとパス</th><th>説明</th></tr></thead><tbody>
 <tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
 <tr><td>ページの更新</td><td><code>PUT /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを更新します。リクエストボディには <code>content</code> プロパティを与えます。</td></tr>
