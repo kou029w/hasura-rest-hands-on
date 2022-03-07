@@ -68,4 +68,21 @@ Hasura Cloudのプロジェクトの画面に戻り、[Env vars]にアクセス�
 
 ![](https://lh3.googleusercontent.com/C1hwqyYYH8jtAZfkJG5y6DlOn7mYn9cXI1Er5xnGKZcddVw7dP_yj8_-j7v9D-SOjOi0Pu1qM74fLRu9XjSjFkU6LWbNysgS7QVU1ROqVJf0Ic0Hwud4rZyoxhopks2G8veA9SIMWg=w1280)
 
-REST APIエンドポイントをWebアプリから利用する準備が整いました 🎉
+## REST APIエンドポイントの確認
+
+実際にHasuraのREST APIエンドポイントにアクセスできるか確認してみましょう。
+
+- プロトコル: HTTPS
+- ドメイン名: `{Hasura Cloudのプロジェクト名}.hasura.app`
+
+| 名称         | HTTPメソッドとパス       | 説明                                                                                                                                      |
+| ------------ | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| ページの取得 | `GET /api/rest/page/:id` | 割り当てられた識別子 `id` をもつページを取得します。ページが存在する場合、レスポンスボディには `data.page.content` プロパティを含みます。 |
+| ページの更新 | `PUT /api/rest/page/:id` | 割り当てられた識別子 `id` をもつページを更新します。リクエストボディには `content` プロパティを与えます。                                 |
+
+例: `id` が `1` のページにアクセスする [https://memo-demo.hasura.app/api/rest/page/1](https://memo-demo.hasura.app/api/rest/page/1)
+
+Hasura Cloudで作成したREST APIエンドポイントにアクセスするには、Hasura Cloudのプロジェクト名の直後に `.hasura.app` を加えたドメイン名でアクセスできます。
+たとえば、Hasura Cloudのプロジェクト名が `memo-demo` の場合、ドメイン名は `memo-demo.hasura.app` となります。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。
+
+これで、REST APIエンドポイントをWebアプリから利用する準備が整いました。
