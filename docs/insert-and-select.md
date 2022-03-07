@@ -4,6 +4,8 @@ GraphQLによるデータの操作を行ってみましょう。
 
 コンソールのトップ画面に戻ると、GraphiQL (GraphQLのプレイグラウンド、開発環境) を使ってGraphQL APIを実際に試すことが可能です。
 
+![](https://lh3.googleusercontent.com/ygTdByArh1HC1hmh_Eq76ExXmcy0bq2k2y4uBgS3Gdqs7VPb9SjsjuPa_vB5o55Wt69yswx-UHHbjhLdQLH0Cnd2zLMKIWU8wKpQ_zPXmpKki6H5ugVg8B7qDwfY2qnZthheXM-h9w=w1280)
+
 ## データの挿入
 
 まずGraphQLでデータの挿入を試します。ここでは例として `pages` テーブルに次のデータを書き込みます。
@@ -26,9 +28,6 @@ mutation MyMutation {
 <!-- prettier-ignore-end -->
 
 サーバーにリクエストを発行しレスポンスボディとして得られたデータは、右側のパネルに表示されます。
-
-![](https://lh3.googleusercontent.com/ygTdByArh1HC1hmh_Eq76ExXmcy0bq2k2y4uBgS3Gdqs7VPb9SjsjuPa_vB5o55Wt69yswx-UHHbjhLdQLH0Cnd2zLMKIWU8wKpQ_zPXmpKki6H5ugVg8B7qDwfY2qnZthheXM-h9w=w1280)
-
 問題無くJSONのデータが得られたら、別のデータの書き込みを試してみます。
 
 例として `pages` テーブルに次のデータを書き込みます。
