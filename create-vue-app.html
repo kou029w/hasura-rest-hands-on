@@ -141,18 +141,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="vueアプリケーションの作成"><a class="header" href="#vueアプリケーションの作成">Vueアプリケーションの作成</a></h1>
-<p><a href="https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&amp;file=src/App.vue"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Edit on StackBlitz" /></a>
-<a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a></p>
+<p><a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
+<a href="https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&amp;file=src/App.vue"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Edit on StackBlitz" /></a></p>
 <p>いずれかのリンクにアクセスし、Vueアプリケーションを作成します。</p>
-<p>なお、URLに含まれる <code>memo-demo</code> は、Hasura Cloudプロジェクト名によって異なるので、適宜自分の作成したプロジェクトに合わせて読み替えてください。</p>
-<pre><code class="language-vue">&lt;script&gt;
+<pre><code class="language-vue">&lt;!-- src/App.vue --&gt;
+&lt;script&gt;
 import { ref, onMounted } from &quot;vue&quot;;
 import { QuillEditor } from &quot;@vueup/vue-quill&quot;;
 import &quot;@vueup/vue-quill/dist/vue-quill.snow.css&quot;;
 import axios from &quot;axios&quot;;
 import debounce from &quot;lodash.debounce&quot;;
 
-/* ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です。 */
+// ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です
 const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
 
 export default {
@@ -183,9 +183,16 @@ export default {
   /&gt;
 &lt;/template&gt;
 </code></pre>
+<p>ローカル環境で作成する場合は、CodeSandboxにアクセスし、左の[Files]パネルから[↓ (Export to Zip)]ボタンを押すと、ソースコード一式をダウンロードできます。ダウンロードしたZIPファイルを展開後、<code>npm install</code> コマンドなどで必要なパッケージを導入することで同様にVueアプリケーションを作成できます。</p>
+<p>ソースコードの中には、HasuraのREST APIのエンドポイントURLが含まれます。そのURLに含まれるドメイン名の部分の <code>memo-demo</code> は、Hasura Cloudプロジェクト名です。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。</p>
+<pre><code class="language-js">// src/App.vue
+// ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です
+const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
+</code></pre>
+<p>このエンドポイントURLを自分の作成したプロジェクトのものに書き換えると完成です。</p>
+<p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成できました 🎉</p>
 <p>Hasuraのコンソールにアクセスすると、実際にデータが更新されていることを確認できます。</p>
 <p><img src="https://lh3.googleusercontent.com/twteosRUkmMlBoa8PXU3UXC9umek-TzQ1kwOWZIShW7fKvW_4tVtG7B3Ue-olldhxh05x1JTFtt_Oxn2nLxcDPEGBv32bkE2zjpqL7heEjV54jkDgYqOm1tEq02qvnKoqu5yaSKRZA=w800" alt="" /></p>
-<p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成できました🎉</p>
 
                     </main>
 
