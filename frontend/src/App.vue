@@ -5,7 +5,7 @@ import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import axios from "axios";
 import debounce from "lodash.debounce";
 
-// ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です
+// ここに作成したREST APIエンドポイントを指定します。`memo-demo` の部分にHasura Cloudプロジェクト名を指定します。
 const endpoint = "https://memo-demo.hasura.app/api/rest/page/1";
 
 export default {
