@@ -311,7 +311,7 @@
 <h2 id="設計"><a class="header" href="#設計">設計</a></h2>
 <p>HasuraはGraphQL APIサーバーとして利用するだけでなく、REST APIサーバーとして利用することもできます。このハンズオンでは、GraphQL QueryをREST化し、次の仕様のREST APIエンドポイントを作成します。</p>
 <table><thead><tr><th>名称</th><th>HTTPメソッドとパス</th><th>説明</th></tr></thead><tbody>
-<tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
+<tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。ページが存在する場合、レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
 <tr><td>ページの更新</td><td><code>PUT /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを更新します。リクエストボディには <code>content</code> プロパティを与えます。</td></tr>
 </tbody></table>
 <h2 id="ページの取得-get-pageidエンドポイントの作成"><a class="header" href="#ページの取得-get-pageidエンドポイントの作成">「ページの取得 (<code>GET page/:id</code>)」エンドポイントの作成</a></h2>
@@ -398,7 +398,20 @@
 <p>入力後、[Add]ボタン押して追加します。</p>
 <p><img src="https://lh3.googleusercontent.com/TZHIQuC6MviESxMktg2GYuS7yLJXrJCnhrGmVlB60EFaUpPalW6rVfHo01x5lWPvWwu047JLFSnCK22LDxL1m1fSH_OKzAopA9aV6sHGdLRSLUEOBS7i-cUBlR0TQvsIQG27Ky8obA=w1280" alt="" /></p>
 <p><img src="https://lh3.googleusercontent.com/C1hwqyYYH8jtAZfkJG5y6DlOn7mYn9cXI1Er5xnGKZcddVw7dP_yj8_-j7v9D-SOjOi0Pu1qM74fLRu9XjSjFkU6LWbNysgS7QVU1ROqVJf0Ic0Hwud4rZyoxhopks2G8veA9SIMWg=w1280" alt="" /></p>
-<p>REST APIエンドポイントをWebアプリから利用する準備が整いました 🎉</p>
+<h2 id="rest-apiエンドポイントの確認"><a class="header" href="#rest-apiエンドポイントの確認">REST APIエンドポイントの確認</a></h2>
+<p>実際にHasuraのREST APIエンドポイントにアクセスできるか確認してみましょう。</p>
+<ul>
+<li>プロトコル: HTTPS</li>
+<li>ドメイン名: <code>{Hasura Cloudのプロジェクト名}.hasura.app</code></li>
+</ul>
+<table><thead><tr><th>名称</th><th>HTTPメソッドとパス</th><th>説明</th></tr></thead><tbody>
+<tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。ページが存在する場合、レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
+<tr><td>ページの更新</td><td><code>PUT /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを更新します。リクエストボディには <code>content</code> プロパティを与えます。</td></tr>
+</tbody></table>
+<p>例: <code>id</code> が <code>1</code> のページにアクセスする <a href="https://memo-demo.hasura.app/api/rest/page/1">https://memo-demo.hasura.app/api/rest/page/1</a></p>
+<p>Hasura Cloudで作成したREST APIエンドポイントにアクセスするには、Hasura Cloudのプロジェクト名の直後に <code>.hasura.app</code> を加えたドメイン名でアクセスできます。
+たとえば、Hasura Cloudのプロジェクト名が <code>memo-demo</code> の場合、ドメイン名は <code>memo-demo.hasura.app</code> となります。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。</p>
+<p>これで、REST APIエンドポイントをWebアプリから利用する準備が整いました。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="vueアプリケーションの作成"><a class="header" href="#vueアプリケーションの作成">Vueアプリケーションの作成</a></h1>
 <p><a href="https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit on CodeSandbox" /></a>
 <a href="https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&amp;file=src/App.vue"><img src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" alt="Edit on StackBlitz" /></a></p>

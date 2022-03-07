@@ -145,7 +145,7 @@
 <h2 id="設計"><a class="header" href="#設計">設計</a></h2>
 <p>HasuraはGraphQL APIサーバーとして利用するだけでなく、REST APIサーバーとして利用することもできます。このハンズオンでは、GraphQL QueryをREST化し、次の仕様のREST APIエンドポイントを作成します。</p>
 <table><thead><tr><th>名称</th><th>HTTPメソッドとパス</th><th>説明</th></tr></thead><tbody>
-<tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
+<tr><td>ページの取得</td><td><code>GET /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを取得します。ページが存在する場合、レスポンスボディには <code>data.page.content</code> プロパティを含みます。</td></tr>
 <tr><td>ページの更新</td><td><code>PUT /api/rest/page/:id</code></td><td>割り当てられた識別子 <code>id</code> をもつページを更新します。リクエストボディには <code>content</code> プロパティを与えます。</td></tr>
 </tbody></table>
 <h2 id="ページの取得-get-pageidエンドポイントの作成"><a class="header" href="#ページの取得-get-pageidエンドポイントの作成">「ページの取得 (<code>GET page/:id</code>)」エンドポイントの作成</a></h2>
