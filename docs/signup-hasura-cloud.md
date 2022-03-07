@@ -14,7 +14,7 @@ GitHubアカウントまたはGoogleアカウント、メールアドレスを�
 
 GitHubアカウントを使用する場合:
 
-事前に[Join GitHub](https://github.com/join)からGitHubアカウントを作成し、サインインします。
+事前に[Join GitHub](https://github.com/signup)からGitHubアカウントを作成し、サインインします。
 
 Googleアカウントを使用する場合:
 
