@@ -21,7 +21,7 @@
 
 - [Hasura Cloud](https://cloud.hasura.io/) - すぐに利用可能なHasuraの環境
 - [Heroku Postgres](https://jp.heroku.com/postgres) - すぐに利用可能なデータベース
-- [CodeSandbox](https://codesandbox.io/) - フロントエンドのオンライン開発環境
+- [CodeSandbox](https://codesandbox.io/) (あるいは、[StackBlitz](https://stackblitz.com/)) - フロントエンドのオンライン開発環境
 - [Vue 3](https://vuejs.org/) - プログレッシブWebフレームワーク
 - [Quill](https://quilljs.com/) - リッチテキストエディター
 
