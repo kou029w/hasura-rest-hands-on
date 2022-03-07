@@ -8,7 +8,7 @@ GraphQLによるデータの操作を行ってみましょう。
 
 ## データの挿入
 
-まずGraphQLでデータの挿入を試します。ここでは例として `pages` テーブルに次のデータを書き込みます。
+まずGraphQLでデータを挿入してみます。ここでは例として `pages` テーブルに次のデータを書き込みます。
 
 | 項目      | 説明         | 値                      |
 | --------- | ------------ | ----------------------- |
@@ -28,7 +28,9 @@ mutation MyMutation {
 <!-- prettier-ignore-end -->
 
 サーバーにリクエストを発行しレスポンスボディとして得られたデータは、右側のパネルに表示されます。
-問題無くJSONのデータが得られたら、別のデータの書き込みを試してみます。
+
+問題なくデータが得られたでしょうか。
+別のデータも試してみましょう。
 
 例として `pages` テーブルに次のデータを書き込みます。
 
@@ -47,21 +49,24 @@ mutation MyMutation {
 ```
 <!-- prettier-ignore-end -->
 
-レスポンスを見ると問題なく `id` (ページの識別子) が得られており、正しく割り当てられ、テーブル内に書き込まれているようですね。
-
 ![](https://lh3.googleusercontent.com/jJ11PeUPl-HOu38_Om5KSwm0WguYTopL9Gw1SXX7x9RxRfiBfNNp9Su6FtzzEwsQGZNm8HUX76McMs1YfuhnU9tJWgZoJfpma7_Zk8U2SaOgizNV-G4TA4eKIE5yR5cglZai43It2g=w1280)
+
+レスポンスを見ると問題なく `id` (ページの識別子) が得られており、正しく割り当てられているようですね。
+問題なくテーブル内に書き込まれているようです。
 
 実際にデータベースのテーブルに書き込まれていることを確認してみます。[Data Manager] > [View Database] > `pages` テーブルを選択すると[Browse Rows]パネルでテーブル内のデータを確認することが可能です。
 
-先ほどのGraphQL Queryリクエストが問題なく発行され、正しくデータが書き込まれていますね。
-
 ![](https://lh3.googleusercontent.com/2ExXahoxvOy25dwNkM8YhlVdlo_3T5kjqGDSRzDfV2O3TV3gjK2F03zp_ewSuafsH_nyS0voOsX5G6uahxSgNRp-BpYpQSCFE36v85D_sEaSnfMcGwPnQMI7kWqsV0X1aUAQhnUgqg=w1280)
+
+先ほどのGraphQL Queryリクエストが問題なく発行され、正しくデータが書き込まれていますね。
 
 ## データの取得
 
-上述の `pages` テーブル内からGraphQLでデータの取得を試します。取得するために、データに割り当てられた `id` を使います。
+続いて、`pages` テーブルのデータを取得してみます。
 
-GraphQL Queryとしては次のコードを書いて、▶ ボタンからリクエストを行います。
+![](https://lh3.googleusercontent.com/WE8Pqbr0M-RwfGTxoq8uPyZcLkjppcP_g5HVGastYV_pr7Q_mYB9svilyeTRF7G0WK7g4Xgi19AgamY-8h9xuo_05AKb5r96dtiJJpWe7IX7aJjCs9fBssMxhAZUfDA1OsJ1NZ_Yvw=w1280)
+
+次のGraphQL Queryを書き、リクエストを行います。
 
 <!-- prettier-ignore-start -->
 ```graphql
@@ -74,15 +79,16 @@ query MyQuery {
 ```
 <!-- prettier-ignore-end -->
 
-レスポンスを見ると、問題なく先ほど書き込まれたのテーブル内データが得られていますね。
+このとき、引数の `id` として、データに割り当てられた `id` を使います。
 
 | 項目      | 説明           | 例               |
 | --------- | -------------- | ---------------- |
 | `id`      | ページの識別子 | `2`              |
 | `content` | ページの本文   | `{hey: "hello"}` |
 
-![](https://lh3.googleusercontent.com/WE8Pqbr0M-RwfGTxoq8uPyZcLkjppcP_g5HVGastYV_pr7Q_mYB9svilyeTRF7G0WK7g4Xgi19AgamY-8h9xuo_05AKb5r96dtiJJpWe7IX7aJjCs9fBssMxhAZUfDA1OsJ1NZ_Yvw=w1280)
+レスポンスを見ると、問題なく先ほど書き込まれたのテーブル内データが得られていますね。
 
-GraphQLでデータの挿入と取得を実際に試してみて、いかがでしたか。
+このようにして、HasuraではGraphQLを使って簡単にデータベースのデータを操作できます。
 
-このハンズオンではGraphQLの具体的なオペレーション `mutation` や `query`、Hasuraの提供しているデータのCRUDのためのフィールド `insert_*` や `*_by_pk` について詳しくは説明しません。しかし実際にはここで紹介した以外にもさまざまな操作を行うことが可能です。[Explorer]のパネルから実行可能な操作や型、あるいは右側の[< Docs]等からGraphQLの型の詳細を参照してみると、実際の操作の参考になるかと思います。
+実際にはここで紹介した以外にもさまざまな操作を行うことが可能です。GraphiQLの[Explorer]パネルから実行可能な操作や型を参照してみると、実際の操作の参考になるかと思います。
+あるいは、右側の[Docs]パネルからGraphQLの型の詳細を参照してみてください。
