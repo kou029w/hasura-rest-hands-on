@@ -152,7 +152,7 @@ import &quot;@vueup/vue-quill/dist/vue-quill.snow.css&quot;;
 import axios from &quot;axios&quot;;
 import debounce from &quot;lodash.debounce&quot;;
 
-// ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です
+// ここに作成したREST APIエンドポイントを指定します。`memo-demo` の部分にHasura Cloudプロジェクト名を指定します。
 const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
 
 export default {
@@ -186,7 +186,7 @@ export default {
 <p>ローカル環境で作成する場合は、CodeSandboxにアクセスし、左の[Files]パネルから[↓ (Export to Zip)]ボタンを押すと、ソースコード一式をダウンロードできます。ダウンロードしたZIPファイルを展開後、<code>npm install</code> コマンドなどで必要なパッケージを導入することで同様にVueアプリケーションを作成できます。</p>
 <p>ソースコードの中には、HasuraのREST APIのエンドポイントURLが含まれます。そのURLに含まれるドメイン名の部分の <code>memo-demo</code> は、Hasura Cloudプロジェクト名です。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。</p>
 <pre><code class="language-js">// src/App.vue
-// ここに作成したREST APIエンドポイントを指定します。 `memo-demo` の部分はHasura Cloudプロジェクト名です
+// ここに作成したREST APIエンドポイントを指定します。`memo-demo` の部分にHasura Cloudプロジェクト名を指定します。
 const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
 </code></pre>
 <p>このエンドポイントURLを自分の作成したプロジェクトのものに書き換えると完成です。</p>
