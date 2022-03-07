@@ -9,7 +9,7 @@ Hasuraを利用するためにHasura Cloudのプロジェクトを作成しま�
 
 [Hasura Cloudのトップページ](https://cloud.hasura.io/)にアクセスすると、プロジェクトの一覧画面が表示され、[Create Project]ボタンから、プロジェクト作成フォームを開きます。
 
-プロジェクト作成フォームに必要事項を入力します。ここでは例として次の項目を入力します。
+プロジェクト作成フォームに必要事項を入力します。ここでは例として次の項目を選択します。
 
 | 項目                  | 説明             | 例                                                               |
 | --------------------- | ---------------- | ---------------------------------------------------------------- |
@@ -17,9 +17,6 @@ Hasuraを利用するためにHasura Cloudのプロジェクトを作成しま�
 | Select a region       | リージョン       | US West (N. California) - 無料で利用可能なデフォルトのリージョン |
 
 必要事項を入力後、[Create project]ボタンを押し、プロジェクトを作成します。
-
-![](https://lh3.googleusercontent.com/S5JmjK-PKTK1BW7Q0CXxQWfLpy4T8j96n3QqKy9p88fsLXPDX056uR3bC4MlhBJcSUjcSWNoJrc9mkXq3PG4S-Aax55awJrP65MSx6_dpavy0tNEsAE4YGu3X0IImUjYdE_7QesTHA=w1280)
-
 プロジェクトの作成が完了すると、画面上にプロジェクトの詳細が表示されます。
 
 ![](https://lh3.googleusercontent.com/OHk3SnMo5zFoulppRwCkAahq6wr4JImN88XgSlkHYeZFhPTd1pHQp4CUXmDDRTAdmsk9kNCJLLzZ0x_yCH1kcnLQ9Zbkq2lm5KIJblFDBU56nJ3sSdposGBFVyUwrEMBXgNmox297A=w1280)
