@@ -16,7 +16,7 @@
 
 ```js
 // src/App.vue
-{{#include ../frontend/src/App.vue:8:9}}
+{{#include ../frontend/src/App.vue:14:15}}
 ```
 
 このエンドポイントURLを自分の作成したプロジェクトのものに書き換えると完成です。
