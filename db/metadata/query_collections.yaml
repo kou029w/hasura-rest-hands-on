@@ -5,7 +5,5 @@
         query: "query getPage($id: Int!) {\n  page: pages_by_pk(id: $id) {\n    id\n    content\n  }\n}"
       - name: put page
         query: "mutation putPage($id: Int, $content: jsonb!) {\n  page: insert_pages_one(object: {id: $id, content: $content}, on_conflict: {constraint: pages_pkey, update_columns: content}) {\n    id\n    content\n  }\n}"
-      - name: seed
-        query: "mutation seed($scheduled_time: String = \"\", $payload: jsonb = {}, $name: String = \"\", $id: String = \"\") {\n  insert_pages_one(object: {id: 1, content: {ops: [{insert: \"メモ帳\\n\", attributes: {header: 1}}, {insert: \"\\nこんにちは!\\nこれは「Hasuraで作るREST API」のデモ用Webアプリです。\\nここに入力した内容は自動的にHasuraに送信されデータベースに保存されます。\\n\\n\"}], scheduled_time: $scheduled_time, payload: $payload, name: $name, id: $id}}) {\n    id\n    content\n  }\n}"
       - name: delete all
         query: "mutation deleteAll($scheduled_time: String = \"\", $payload: jsonb = {}, $name: String = \"\", $id: String = \"\") {\n  delete_pages(where: {id: {_is_null: false}, _or: {content: {_neq: {scheduled_time: $scheduled_time, payload: $payload, name: $name, id: $id}}}}) {\n    affected_rows\n  }\n}"

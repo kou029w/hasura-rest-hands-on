@@ -6,11 +6,3 @@
   headers:
     - value: "***"
       name: x-hasura-admin-secret
-- name: daily_seed
-  webhook: https://memo-demo.hasura.app/api/rest/seed_page
-  schedule: 1 0 * * *
-  include_in_metadata: true
-  payload: {}
-  headers:
-    - value: "***"
-      name: x-hasura-admin-secret

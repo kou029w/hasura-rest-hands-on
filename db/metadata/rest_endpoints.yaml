@@ -26,12 +26,3 @@
     - PUT
   name: put page
   comment: null
-- definition:
-    query:
-      collection_name: allowed-queries
-      query_name: seed
-  url: seed_page
-  methods:
-    - POST
-  name: seed
-  comment: null
