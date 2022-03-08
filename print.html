@@ -424,18 +424,38 @@ import &quot;@vueup/vue-quill/dist/vue-quill.snow.css&quot;;
 import axios from &quot;axios&quot;;
 import debounce from &quot;lodash.debounce&quot;;
 
+const id =
+  window.localStorage.getItem(&quot;id&quot;) ??
+  String(window.crypto.getRandomValues(new Uint16Array(1))[0]);
+
+window.localStorage.setItem(&quot;id&quot;, id);
+
 // ここに作成したREST APIエンドポイントを指定します。`memo-demo` の部分にHasura Cloudプロジェクト名を指定します。
-const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
+const endpoint = `https://memo-demo.hasura.app/api/rest/page/${id}`;
 
 export default {
   components: { QuillEditor },
   setup() {
     const editor = ref();
     onMounted(async () =&gt; {
+      console.log(&quot;endpoint&quot;, endpoint);
       const res = await axios.get(endpoint);
-      const content = res.data.page?.content;
-      editor.value.setContents(content);
+      const content = res.data.page?.content ?? {
+        ops: [
+          { insert: &quot;メモ帳\n&quot;, attributes: { header: 1 } },
+          { insert: &quot;こんにちは!\n&quot; },
+          { insert: &quot;これは「Hasuraで作るREST API」のデモ用Webアプリです。\n&quot; },
+          {
+            insert:
+              &quot;ここに入力した内容は自動的にHasuraに送信されデータベースに保存されます。\n&quot;,
+            attributes: {
+              link: endpoint,
+            },
+          },
+        ],
+      };
       console.log(&quot;content&quot;, content);
+      editor.value.setContents(content);
     });
     const update = debounce(async (content) =&gt; {
       await axios.put(endpoint, { content });
@@ -459,7 +479,7 @@ export default {
 <p>ソースコードの中には、HasuraのREST APIのエンドポイントURLが含まれます。そのURLに含まれるドメイン名の部分の <code>memo-demo</code> は、Hasura Cloudプロジェクト名です。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。</p>
 <pre><code class="language-js">// src/App.vue
 // ここに作成したREST APIエンドポイントを指定します。`memo-demo` の部分にHasura Cloudプロジェクト名を指定します。
-const endpoint = &quot;https://memo-demo.hasura.app/api/rest/page/1&quot;;
+const endpoint = `https://memo-demo.hasura.app/api/rest/page/${id}`;
 </code></pre>
 <p>このエンドポイントURLを自分の作成したプロジェクトのものに書き換えると完成です。</p>
 <p>Hasuraを使用してPostgresデータベースに接続したREST APIを構築し、それを利用したWebアプリを作成できました 🎉</p>
