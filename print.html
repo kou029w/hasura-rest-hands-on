@@ -266,7 +266,7 @@
 別のデータも試してみましょう。</p>
 <p>例として <code>pages</code> テーブルに次のデータを書き込みます。</p>
 <table><thead><tr><th>項目</th><th>説明</th><th>値</th></tr></thead><tbody>
-<tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello&quot;}</code></td></tr>
+<tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello!&quot;}</code></td></tr>
 </tbody></table>
 <!-- prettier-ignore-start -->
 <pre><code class="language-graphql">mutation MyMutation {
@@ -299,7 +299,7 @@
 <p>このとき、引数の <code>id</code> として、データに割り当てられた <code>id</code> を使います。</p>
 <table><thead><tr><th>項目</th><th>説明</th><th>例</th></tr></thead><tbody>
 <tr><td><code>id</code></td><td>ページの識別子</td><td><code>2</code></td></tr>
-<tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello&quot;}</code></td></tr>
+<tr><td><code>content</code></td><td>ページの本文</td><td><code>{hey: &quot;hello!&quot;}</code></td></tr>
 </tbody></table>
 <p>レスポンスを見ると、問題なく先ほど書き込まれたのテーブル内データが得られていますね。</p>
 <p>このようにして、HasuraではGraphQLを使って簡単にデータベースのデータを操作できます。
