@@ -9,7 +9,7 @@
 - [Hasura GraphQL チュートリアル](https://hasura.io/learn/graphql/hasura/introduction/)
 - [Hasura GraphQL チュートリアル (日本語版)](https://hasura.io/learn/ja/graphql/hasura/introduction/)
 
-## CORSの設定
+## CORS (Cross-Origin Resource Sharing) の設定
 
 応答ヘッダーには、デフォルトで `Access-Control-Allow-Origin: *` ヘッダーが含まれており、外部からのアクセスをすべて許可しています。
 適宜セキュリティ要件に合わせて設定することを推奨します。
