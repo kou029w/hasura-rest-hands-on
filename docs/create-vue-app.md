@@ -1,7 +1,7 @@
 # Vueアプリケーションの作成
 
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&file=src/App.vue)
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue)
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&file=src/App.vue)
 
 いずれかのリンクにアクセスし、Vueアプリケーションを作成します。
 
@@ -10,7 +10,7 @@
 {{#include ../frontend/src/App.vue}}
 ```
 
-ローカル環境で作成する場合は、CodeSandboxにアクセスし、左の[Files]パネルから[↓ (Export to Zip)]ボタンを押すと、ソースコード一式をダウンロードできます。ダウンロードしたZIPファイルを展開後、`npm install` コマンドなどで必要なパッケージを導入することで同様にVueアプリケーションを作成できます。
+ローカル環境で作成する場合は、StackBlitzにアクセスし、左の[Project]パネルから[↓ (Download Project)]ボタンを押すと、ソースコード一式をダウンロードできます。ダウンロードしたZIPファイルを展開後、`npm install` コマンドなどで必要なパッケージを導入することで同様にVueアプリケーションを作成できます。
 
 ソースコードの中には、HasuraのREST APIのエンドポイントURLが含まれます。そのURLに含まれるドメイン名の部分の `memo-demo` は、Hasura Cloudプロジェクト名です。プロジェクトによって異なるので、自分の作成したプロジェクトに合わせて書き換えましょう。
 
