@@ -2,7 +2,7 @@
 
 ## Hasura公式ドキュメント
 
-[Hasura GraphQL Docs](https://hasura.io/docs/latest/graphql/core/index.html)
+[Hasura GraphQL Docs](https://hasura.io/docs/latest/index/)
 
 ## Hasuraチュートリアル
 
