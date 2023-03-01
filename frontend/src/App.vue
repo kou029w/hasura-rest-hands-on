@@ -16,8 +16,7 @@ window.localStorage.setItem("id", id);
 const endpoint = `https://memo-demo.hasura.app/api/rest/page/${id}`;
 
 const editor = ref();
-const initialContent = { ops: [{ insert: "読み込み中…" }] };
-const defaultContent = {
+const initialContent = {
   ops: [
     { insert: "メモ帳\n", attributes: { header: 1 } },
     { insert: "こんにちは!\n" },
@@ -33,7 +32,7 @@ const defaultContent = {
 onMounted(async () => {
   console.log("endpoint", endpoint);
   const res = await axios.get(endpoint);
-  const content = res.data.page?.content ?? defaultContent;
+  const content = res.data.page?.content ?? initialContent;
   editor.value.setContents(content);
   console.log("content", content);
 });
@@ -45,10 +44,5 @@ const update = debounce(async (content) => {
 </script>
 
 <template>
-  <QuillEditor
-    ref="editor"
-    :content="initialContent"
-    @update:content="update"
-    toolbar="full"
-  />
+  <QuillEditor ref="editor" @update:content="update" toolbar="full" />
 </template>
