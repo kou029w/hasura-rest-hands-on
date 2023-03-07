@@ -25,4 +25,4 @@ Hasuraを利用するためにHasura Cloudのプロジェクトを作成しま�
 
 ![](https://lh3.googleusercontent.com/LL6dz4np-O19_runPMbCD5-d3kYc1_QUcc1bJif4Yx7dNr16SY4k6037kV82aqg1FrcYff3QGOFTqzyh9ReYyp-j43EtGJercr7dKxdBxcd1nDzPm9bbWFgJOYjhwNDUsGRWNV2d2g=w1280)
 
-プロジェクトの[Launch Console]ボタンからHasuraのコンソール画面にアクセスして、Heroku Postgresへの接続を行いましょう。
+プロジェクトの[Launch Console]ボタンからHasuraのコンソール画面にアクセスして、データベースへの接続を行いましょう。
