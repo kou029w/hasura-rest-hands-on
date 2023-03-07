@@ -1,8 +1,0 @@
-- name: daily_reset
-  webhook: https://memo-demo.hasura.app/api/rest/delete_pages
-  schedule: 0 0 * * *
-  include_in_metadata: true
-  payload: {}
-  headers:
-    - value: "***"
-      name: x-hasura-admin-secret
