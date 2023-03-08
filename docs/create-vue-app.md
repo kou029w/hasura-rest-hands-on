@@ -1,9 +1,8 @@
 # Vueアプリケーションの作成
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&file=src/App.vue)
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/kou029w/hasura-rest-hands-on/tree/main/frontend?file=/src/App.vue)
+次のリンクにアクセスすると、StackBlitzでVueアプリケーションを作成できます
 
-いずれかのリンクにアクセスし、Vueアプリケーションを作成します。
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/kou029w/hasura-rest-hands-on/tree/main/frontend?terminal=dev&file=src/App.vue)
 
 ```vue
 <!-- src/App.vue -->

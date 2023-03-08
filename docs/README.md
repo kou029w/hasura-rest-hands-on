@@ -19,7 +19,7 @@
 構成としては下記の通りです。
 
 - [Hasura Cloud](https://cloud.hasura.io/) - すぐに利用可能なHasuraの環境
-- [StackBlitz](https://stackblitz.com/) (あるいは、[CodeSandbox](https://codesandbox.io/)) - フロントエンドのオンライン開発環境
+- [StackBlitz](https://stackblitz.com/) - フロントエンドのオンライン開発環境
 - [Vue 3](https://vuejs.org/) - プログレッシブWebフレームワーク
 - [Quill](https://quilljs.com/) - リッチテキストエディター
 
