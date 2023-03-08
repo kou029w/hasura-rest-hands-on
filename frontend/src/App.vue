@@ -15,7 +15,7 @@ window.localStorage.setItem("id", id);
 const endpoint = `https://memo-demo.hasura.app/api/rest/page/${id}`;
 
 const content = ref(new Delta([{ insert: "読み込み中…" }]));
-const initialContent = new Delta([
+const defaultContent = new Delta([
   { insert: "メモ帳\n", attributes: { header: 1 } },
   { insert: "こんにちは!\n" },
   { insert: "これは「Hasuraで作るREST API」のデモ用Webアプリです。\n" },
@@ -30,11 +30,11 @@ onMounted(async () => {
   console.log("endpoint", endpoint);
   const res = await fetch(endpoint);
   const data = await res.json();
-  content.value = new Delta(data.page?.content ?? initialContent);
+  content.value = new Delta(data.page?.content ?? defaultContent);
   console.log("mounted", data);
 });
 
-const update = useDebounceFn(async (content) => {
+const updateContent = useDebounceFn(async (content) => {
   const res = await fetch(endpoint, {
     method: "PUT",
     body: JSON.stringify({ content }),
@@ -45,5 +45,9 @@ const update = useDebounceFn(async (content) => {
 </script>
 
 <template>
-  <QuillEditor :content="content" @update:content="update" toolbar="full" />
+  <QuillEditor
+    toolbar="full"
+    :content="content"
+    @update:content="updateContent"
+  />
 </template>
