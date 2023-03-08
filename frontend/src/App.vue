@@ -1,9 +1,8 @@
 <script setup>
-import { ref, onMounted } from "vue";
-import { QuillEditor } from "@vueup/vue-quill";
+import { onMounted, ref } from "vue";
+import { useDebounceFn } from "@vueuse/core";
+import { Delta, QuillEditor } from "@vueup/vue-quill";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
-import axios from "axios";
-import debounce from "lodash.debounce";
 
 const id =
   window.localStorage.getItem("id") ??
@@ -15,34 +14,36 @@ window.localStorage.setItem("id", id);
 // `memo-demo` の部分をHasura Cloudプロジェクト名に書き換えてください
 const endpoint = `https://memo-demo.hasura.app/api/rest/page/${id}`;
 
-const editor = ref();
-const initialContent = {
-  ops: [
-    { insert: "メモ帳\n", attributes: { header: 1 } },
-    { insert: "こんにちは!\n" },
-    { insert: "これは「Hasuraで作るREST API」のデモ用Webアプリです。\n" },
-    {
-      insert:
-        "ここに入力した内容は自動的にHasuraに送信されデータベースに保存されます。\n",
-      attributes: { link: endpoint },
-    },
-  ],
-};
+const content = ref(new Delta([{ insert: "読み込み中…" }]));
+const initialContent = new Delta([
+  { insert: "メモ帳\n", attributes: { header: 1 } },
+  { insert: "こんにちは!\n" },
+  { insert: "これは「Hasuraで作るREST API」のデモ用Webアプリです。\n" },
+  {
+    insert:
+      "ここに入力した内容は自動的にHasuraに送信されデータベースに保存されます。\n",
+    attributes: { link: endpoint },
+  },
+]);
 
 onMounted(async () => {
   console.log("endpoint", endpoint);
-  const res = await axios.get(endpoint);
-  const content = res.data.page?.content ?? initialContent;
-  editor.value.setContents(content);
-  console.log("content", content);
+  const res = await fetch(endpoint);
+  const data = await res.json();
+  content.value = new Delta(data.page?.content ?? initialContent);
+  console.log("mounted", data);
 });
 
-const update = debounce(async (content) => {
-  await axios.put(endpoint, { content });
-  console.log("updated", content);
-}, 1000);
+const update = useDebounceFn(async (content) => {
+  const res = await fetch(endpoint, {
+    method: "PUT",
+    body: JSON.stringify({ content }),
+  });
+  const data = await res.json();
+  console.log("updated", data);
+}, 250);
 </script>
 
 <template>
-  <QuillEditor ref="editor" @update:content="update" toolbar="full" />
+  <QuillEditor :content="content" @update:content="update" toolbar="full" />
 </template>
