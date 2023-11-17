@@ -9,7 +9,6 @@
     "esbuild": "^0.19.0",
     "highlight.js": "^11.7.0",
     "highlightjs-graphql": "^1.0.2",
-    "prettier": "^3.0.0",
-    "prettier-plugin-md-nocjsp": "^1.5.1"
+    "prettier": "^3.0.0"
   }
 }
