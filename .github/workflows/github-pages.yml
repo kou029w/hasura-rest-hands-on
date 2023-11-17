@@ -18,7 +18,7 @@ jobs:
         with: { node-version: lts/*, cache: yarn }
       - uses: Homebrew/actions/setup-homebrew@master
       - id: brew_cache
-        run: echo "::set-output name=dir::$(brew --cache)"
+        run: echo "dir=$(brew --cache)" >> "${GITHUB_OUTPUT}"
       - uses: actions/cache@v3
         with:
           path: ${{ steps.brew_cache.outputs.dir }}
