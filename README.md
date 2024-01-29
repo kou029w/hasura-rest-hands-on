@@ -4,17 +4,12 @@
 
 ### 前提
 
-- Ubuntu 20.04 LTS
-- Homebrew
-- Yarn
+- mdBook
 
 ### 手順
 
 下記のコマンドを実行すると `book` ディレクトリ以下にファイルが生成されます。
 
 ```sh
-yarn
-yarn build
-brew bundle
 mdbook build
 ```

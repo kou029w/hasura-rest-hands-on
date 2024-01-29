@@ -2,8 +2,11 @@
   "name": "@kou029w/hasura-rest-hands-on",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
-    "build": "esbuild src/*.js --outdir=theme --platform=browser --bundle --minify"
+    "build": "esbuild src/*.js --outdir=theme --platform=browser --bundle --minify && npm --workspaces run build"
   },
   "devDependencies": {
     "esbuild": "^0.19.0",
