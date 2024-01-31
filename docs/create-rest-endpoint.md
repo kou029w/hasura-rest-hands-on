@@ -35,7 +35,7 @@ query getPage($id: Int!) {
 | 項目     | 説明                    | 内容       |
 | -------- | ----------------------- | ---------- |
 | Name     | エンドポイントの名称    | get page   |
-| Location | `/api/rest/` 以降のパス | `page/:id` |
+| URL Path | `/api/rest/` 以降のパス | `page/:id` |
 | Method   | HTTPメソッド            | `GET`      |
 
 ## 「ページの更新 (`PUT page/:id`)」エンドポイントの作成
@@ -65,7 +65,7 @@ mutation putPage($id: Int!, $content: jsonb!) {
 | 項目     | 説明                    | 内容       |
 | -------- | ----------------------- | ---------- |
 | Name     | エンドポイントの名称    | put page   |
-| Location | `/api/rest/` 以降のパス | `page/:id` |
+| URL Path | `/api/rest/` 以降のパス | `page/:id` |
 | Method   | HTTPメソッド            | `PUT`      |
 
 作成が完了すると作成したREST APIエンドポイントの一覧が表示されます。
