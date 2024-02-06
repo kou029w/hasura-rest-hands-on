@@ -1,10 +1,11 @@
 [book]
-language = "ja"
-title = "Hasuraで作るREST API"
 authors = ["Kohei Watanabe"]
+language = "ja"
 src = "docs"
+title = "Hasuraで作るREST API"
 
 [output.html]
-site-url = "/hasura-rest-hands-on/"
-git-repository-url = "https://github.com/kou029w/hasura-rest-hands-on"
+additional-js = ["external-links.js", "regexp-search.js"]
 edit-url-template = "https://github.com/kou029w/hasura-rest-hands-on/edit/main/{path}"
+git-repository-url = "https://github.com/kou029w/hasura-rest-hands-on"
+site-url = "/hasura-rest-hands-on/"
