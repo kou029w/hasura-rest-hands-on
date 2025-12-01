@@ -12,6 +12,6 @@
     "esbuild": "0.27.0",
     "highlight.js": "11.11.1",
     "highlightjs-graphql": "1.0.2",
-    "prettier": "3.6.2"
+    "prettier": "3.7.2"
   }
 }
