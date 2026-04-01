@@ -12,7 +12,7 @@ jobs:
       id-token: write
     environment: github-pages
     runs-on: ubuntu-latest
-    container: node:lts-alpine@sha256:7fddd9ddeae8196abf4a3ef2de34e11f7b1a722119f91f28ddf1e99dcafdf114
+    container: node:lts-alpine@sha256:01743339035a5c3c11a373cd7c83aeab6ed1457b55da6a69e014a95ac4e4700b
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
