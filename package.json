@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "esbuild": "0.28.2",
-    "highlight.js": "11.11.1",
+    "highlight.js": "11.11.2",
     "highlightjs-graphql": "1.0.2",
     "prettier": "3.9.6"
   }
